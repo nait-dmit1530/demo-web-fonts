@@ -1,0 +1,60 @@
+/* FONTS 
+
+    There are THREE ways to bring fonts into projects
+    1. System fonts / font stack (fonts loaded on each computer by default)
+    2. Online font library (i.e. Google Fonts or Adobe Fonts)
+    3. Custom font added to site *** not the best option for performance ***/
+
+
+/* Adding custom font(s)
+    Below text copied from stylesheet.css from web font kit downloaded from
+    Font Squirrel (found in fonts folder) 
+    The font-face attribute only declares the font for further use in CSS elements
+     */
+@font-face {
+    /* NOTE: Font family name can be anything, but keep it relative */
+    font-family: 'veteran_typewriter';
+
+        /* PAY ATTENTION TO FILE PATHS!!! */ 
+    src: url('../fonts/veteran_typewriter_regular-webfont.woff2') format('woff2'),
+         url('../fonts/veteran_typewriter_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* Tells the browser to use system fonts, until custom font is ready for display
+        This helps avoid invisible text on a web page */
+    font-display: swap;
+}
+
+/*  Adding default system fonts 
+    Place the base, paragraph font styling on the body element */
+body {
+    background-color: #dedcda;
+    /*  */ 
+    font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+    
+    /* Best practice is to call the custom web font first, 
+        then call other similar system fonts in case the
+        custom web font doesn't load */
+    font-family: 'veteran_typewriter', Courier New, monospace;
+
+}
+
+/* Adding Google Font to webpage 
+    Links are placed in <head> of HTML while font-stack added below */
+h2 {
+    font-family: 'Beth Ellen', cursive;
+}
+
+section {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    /* sets flex container to be "viewport height" (vh)
+        which is 100% of the web browser length */
+    height: 100vh;
+    /* when rotating the flex container, the justify-content and align-items
+        also rotate */
+    justify-content: center; /* goes top to bottom */
+    align-items: center;
+}
